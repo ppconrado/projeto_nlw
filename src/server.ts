@@ -7,4 +7,10 @@ const app = express();
  * POST   -> Criação
  * PUT    -> Alteração
  * DELETE -> Deletar
- * PATCH  -> Alterar 
+ * PATCH  -> Alterar uma informação especifica
+ */
+app.get("/", (request, response) => {
+  return response.send("O;a NLW 05");
+});
+
+app.listen(3333, () => console.log("Server is running on port 3333"));
