@@ -1,5 +1,7 @@
 import express, { request, response } from "express";
 
+import "./database"; // Import from index.ts
+
 const app = express();
 
 /**
