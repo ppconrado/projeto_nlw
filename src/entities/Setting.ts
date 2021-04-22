@@ -6,6 +6,8 @@ import {
   PrimaryColumn,
 } from "typeorm";
 
+import { v4 as uuid } from "uuid";
+
 @Entity("settings")
 class Setting {
   @PrimaryColumn()
@@ -18,6 +20,13 @@ class Setting {
   updated_at: Date;
   @CreateDateColumn()
   created_at: Date;
+
+  constructor() {
+    if (!this.id) {
+      // se nao tiver preenchido o id ele gera o id
+      this.id = uuid();
+    }
+  }
 }
 
 export { Setting };
